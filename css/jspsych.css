@@ -211,9 +211,28 @@ button:hover {
 
 /*
  *
+ * PLUGIN: jspsych-multi-stim-single-response
+ * 
+ */
+
+#jspsych-multi-stim-single-response-stimulus {
+  display: block;
+  font-size: 50pt;
+  text-align: center;
+  margin: auto;
+  position: absolute;               /* 2 */
+  top: 50%;                         /* 3 */
+  transform: translate(0, -50%);   /* 4 */
+  left: 50%;
+  margin-right: -50%;
+}
+
+/*
+ *
  * PLUGIN: jspsych-palmer
  *
  */
+
 
 #jspsych-palmer-snapCanvas {
     margin-left: auto;
