@@ -102,7 +102,6 @@
 
 				// kill keyboard listeners
 				if(typeof keyboardListener !== 'undefined'){
-					console.log("killed?");
 					jsPsych.pluginAPI.cancelKeyboardResponse(keyboardListener);
 				}
 
@@ -130,7 +129,6 @@
 
 			// function to handle responses by the subject
 			var after_response = function(info) {
-				console.log("HI");
 				// after a valid response, the stimulus will have the CSS class 'responded'
 				// which can be used to provide visual feedback that a response was recorded
 				$("#jspsych-stim-sequence-stimulus").addClass('responded');
@@ -141,7 +139,6 @@
 				}
 
 				if (trial.continue_after_response) {
-					console.log("ended intentionally");
 					end_trial();
 				}
 			};
@@ -152,14 +149,12 @@
 				// start the response listener when it should become legal
 				var keyboardListener; 
 				tResponse = setTimeout(function() {
-					console.log(trial.choices);
 					keyboardListener = jsPsych.pluginAPI.getKeyboardResponse(after_response, trial.choices); }, trial.resp_onset); 
 				setTimeoutHandlers.push(tResponse); 
 			
 			// end trial if time limit is set
 			if (trial.resp_offset > 0) {
 				var t2 = setTimeout(function() {
-					console.log("timed out");
 					end_trial();
 				}, trial.resp_onset + trial.resp_offset);
 				setTimeoutHandlers.push(t2);
