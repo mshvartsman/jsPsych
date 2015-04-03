@@ -4,7 +4,6 @@
  *
  * plugin for displaying a stimulus sequence and getting a single keyboard response
  *
- * documentation: docs.jspsych.org
  *
  **/
 
